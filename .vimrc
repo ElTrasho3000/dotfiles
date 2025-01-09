@@ -20,6 +20,9 @@ set cursorline
 " Enable filetype detection
 filetype on
 
+" Enable filetype plugins
+filetype plugin on
+
 " Enable filetype-based indenting
 filetype indent on
 
