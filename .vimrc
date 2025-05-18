@@ -5,7 +5,11 @@ set nocompatible
 
 " remap keybinds
 inoremap jj <Esc>
-vnoremap jj <ESC>
+vnoremap ff <ESC>
+
+" define cursor behaviour
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " enable syntax colors
 syntax enable
@@ -34,3 +38,4 @@ filetype on
 " --------------------------------------------------
 " Filetype specific settings
 autocmd FileType markdown,html,css,javascript setlocal tabstop=2 shiftwidth=2
+autocmd FileType c setlocal shiftwidth=4 tabstop=4 et
