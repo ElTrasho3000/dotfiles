@@ -206,14 +206,14 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    color: #006600;
+    color: #555555;
 }
 
 #wireplumber {
 }
 
 #wireplumber.muted {
-    color: #006600;
+    color: #555555;
 }
 
 #custom-media {
@@ -247,12 +247,12 @@ label:focus {
 }
 
 #idle_inhibitor {
-    color: #006600;
+    color: #555555;
 }
 
 #idle_inhibitor.activated {
-    background-color: #00dd00;
-    color: #000000;
+    background-color: #62b086;
+    color: #222222;
 }
 
 /*
