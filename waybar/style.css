@@ -1,3 +1,25 @@
+/* colors taken from  https://github.com/void-linux/buildbot-theme/
+blob/master/buildbot_void_view/static/styles.css
+
+--void-light-green: #abc2ab;
+--void-green: #478061;
+--void-dark-green: #295340;
+--void-dark-green2: #62b086;
+
+--background-dark1: #222;
+--background-dark2: #333;
+--background-dark3: #555;
+
+--result-text-dark: #111;
+--result-text-light: #eee;
+
+--foreground-dark: #ccc;
+--foreground-dark2: #eee;
+
+--result-exception-background: #ca56f0;
+--result-exception-border: #ACA0B3;
+*/
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -5,9 +27,9 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background-color: #222222;
+    border-bottom: 3px solid #333333;
+    color: #abc2ab;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -23,7 +45,6 @@ window#waybar.empty {
 window#waybar.solo {
     background-color: #FFFFFF;
 }
-*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -33,6 +54,7 @@ window#waybar.chromium {
     background-color: #000000;
     border: none;
 }
+*/
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -45,18 +67,20 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #abc2ab;
 }
 
 /* you can set a style on hover for any module like this */
+/*
 #pulseaudio:hover {
     background-color: #a37800;
 }
+*/
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #62b086;
 }
 
 #workspaces button:hover {
@@ -64,19 +88,17 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    color: #111111;
+    background-color: #62b086;
+    box-shadow: inset 0 -3px #abc2ab;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #ca56f0;
+    box-shadow: inset 0 -3px #ACA0B3;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
+#mode,
 #clock,
 #battery,
 #cpu,
@@ -95,7 +117,6 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
 }
 
 #window,
@@ -113,18 +134,12 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
-    background-color: #64727D;
-}
-
+#clock,
 #battery {
-    background-color: #ffffff;
-    color: #000000;
 }
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -165,28 +180,22 @@ button:hover {
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #dd0000;
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
 }
 
 #memory {
-    background-color: #9b59b6;
 }
 
 #disk {
-    background-color: #964B00;
 }
 
 #backlight {
-    background-color: #90b1b1;
 }
 
 #network {
-    background-color: #2980b9;
 }
 
 #network.disconnected {
@@ -194,40 +203,30 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    color: #006600;
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    color: #006600;
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
     min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
 }
 
 #temperature {
-    background-color: #f0932b;
 }
 
 #temperature.critical {
@@ -235,7 +234,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #222222;
 }
 
 #tray > .passive {
@@ -248,14 +247,15 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    color: #006600;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: #00dd00;
+    color: #000000;
 }
 
+/*
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
@@ -272,15 +272,15 @@ label:focus {
 #mpd.paused {
     background-color: #51a37a;
 }
+*/
 
 #language {
-    background: #00b093;
-    color: #740864;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
 }
 
+/*
 #keyboard-state {
     background: #97e1ad;
     color: #000000;
@@ -296,6 +296,7 @@ label:focus {
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
+*/
 
 #scratchpad {
     background: rgba(0, 0, 0, 0.2);

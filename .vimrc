@@ -1,4 +1,4 @@
-" | ---------------- VIM SETTINGS ---------------- |
+" |----------------- VIM SETTINGS -----------------|
 " --------------------------------------------------
 " unset vi compatibility
 set nocompatible
@@ -12,7 +12,13 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 " enable syntax colors
-syntax enable
+syntax on
+
+" vimdiff colors
+highlight DiffAdd ctermbg=green ctermfg=white
+highlight DiffDelete ctermbg=red ctermfg=white
+highlight DiffDelete ctermbg=blue ctermfg=white
+highlight DiffText ctermbg=yellow ctermfg=white
 
 " enable line numbers
 set number
