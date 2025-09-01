@@ -1,0 +1,19 @@
+# Add AppImage-directory 'Applications' to PATH
+[[ ":$PATH:" != *":/data/Applications:"* ]] && export PATH=/data/Applications:$PATH
+
+# Enable QT Wayland backend
+export QT_QPA_PLATFORM='wayland-egl;xcb'
+
+# Enable libreoffice qt6 integration 
+export SAL_USE_VCLPLUGIN=gtk3
+
+# Solve displaying issues Java under Xwayland
+_JAVA_AWT_WM_NONREPARENTING=1
+
+# Chromium get rid of missing Google API keys warning
+export GOOGLE_API_KEY="no"
+export GOOGLE_DEFAULT_CLIENT_ID="no"
+export GOOGLE_DEFAULT_CLIENT_SECRET="no"
+
+# Colored GCC warnings and errors
+export GCC_COLORS='error=02;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
