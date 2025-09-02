@@ -20,18 +20,15 @@ set $menu wmenu-run
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Wallpaper
 #
 output * bg /data/images/wallpapers/voidlinux.png fill
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+#
 output 'Chimei Innolux Corporation 0x140A Unknown' pos 1920 1440 
 output 'Dell Inc. DELL S2421HN 4P2W223' pos 0 1440 mode 1920x1080@74.973Hz
 output 'Dell Inc. DELL U2515H 9X2VY5CM0Z5L' pos 1920 0 mode 2560x1440@59.951Hz
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
 #
@@ -47,8 +44,6 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
 #
 input type:touchpad {
 	dwt enabled
@@ -212,10 +207,16 @@ bindsym $mod+r mode "resize"
 #
 # Special Windows:
 #
-
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable, move position top right
 for_window [instance="mega"] floating enable, move position top right
 for_window [class="MEGAsync"] floating enable, move position top right
+
+#
+# Colors:
+#
+client.focused #ACA0B3 #ca65f0 #111111 #62b086 #ca65f0
+client.focused_inactive #555555 #ca56f0 #222222 #abc2ab #555555
+client.unfocused #333333 #222222 #555555 #abc2ab #222222
 
 #
 # Utilities:
@@ -234,15 +235,16 @@ for_window [class="MEGAsync"] floating enable, move position top right
 #
 # Status Bar:
 #
-
 bar {
     swaybar_command waybar
 }
 
+#
 ### Autostart
-
+#
 # Give waybar some time to start so systray is
 # available when autostarting clouds
+
 exec sh -c "sleep 2"
 
 exec nextcloud.kwallet

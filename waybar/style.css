@@ -105,12 +105,12 @@ button:hover {
 #memory,
 #disk,
 #temperature,
+#tray,
 #backlight,
 #network,
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
@@ -139,20 +139,20 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #ca56f0;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #ca56f0;
+        color: #111111;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: #abc2ab;
+    color: #ca56f0;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -234,7 +234,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #222222;
+    background-color: #333333;
 }
 
 #tray > .passive {
