@@ -1,0 +1,11 @@
+#
+### Autostart
+#
+# Give waybar some time to start so systray is
+# available when autostarting apps
+exec sh -c "sleep 2"
+
+exec keepassxc-proxy 
+exec keepassxc
+exec nextcloud
+exec QT_SCALE_FACTOR=1 QT_QPA_PLATFORM=xcb megasync >/dev/null

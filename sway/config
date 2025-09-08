@@ -66,6 +66,9 @@ input type:keyboard {
 #
 # Basics:
 #
+    # KeePassXC
+    bindsym Alt+k exec keepassxc
+
     # Lock screen
     bindsym Ctrl+Alt+l exec swaylock -f -i /data/images/wallpapers/microsoft-windows-95.jpg -c 000000
 
@@ -205,17 +208,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
-# Special Windows:
-#
-for_window [app_id="org.keepassxc.KeePassXC"] floating enable, move position top right
-for_window [instance="mega"] floating enable, move position top right
-for_window [class="MEGAsync"] floating enable, move position top right
-
-#
 # Colors:
 #
 client.focused #ACA0B3 #ca65f0 #111111 #62b086 #ca65f0
-client.focused_inactive #555555 #ca56f0 #222222 #abc2ab #555555
+client.focused_inactive #555555 #abc2ab #222222 #abc2ab #555555
 client.unfocused #333333 #222222 #555555 #abc2ab #222222
 
 #
@@ -229,7 +225,7 @@ client.unfocused #333333 #222222 #555555 #abc2ab #222222
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
+    # Special key to take a screenshot
     bindsym Print exec shotman -c region -C
 
 #
@@ -239,15 +235,4 @@ bar {
     swaybar_command waybar
 }
 
-#
-### Autostart
-#
-# Give waybar some time to start so systray is
-# available when autostarting clouds
-
-exec sh -c "sleep 2"
-
-exec nextcloud.kwallet
-exec QT_SCALE_FACTOR=1 QT_QPA_PLATFORM=xcb megasync
-
-include /etc/sway/config.d/*
+include ./config.d/*
