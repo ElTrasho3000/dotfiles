@@ -17,7 +17,7 @@ syntax on
 " vimdiff colors
 highlight DiffAdd ctermbg=green ctermfg=white
 highlight DiffDelete ctermbg=red ctermfg=white
-highlight DiffDelete ctermbg=blue ctermfg=white
+highlight DiffChange ctermbg=blue ctermfg=white
 highlight DiffText ctermbg=yellow ctermfg=white
 
 " enable line numbers
