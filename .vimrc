@@ -33,9 +33,9 @@ set textwidth=80
 " set default indent behaviour
 set tabstop=4
 set shiftwidth=4
-set expandtab
 set smartindent
 set autoindent
+set expandtab
 
 " --------------------------------------------------
 " Enable filetype detection
@@ -44,5 +44,6 @@ filetype on
 " --------------------------------------------------
 " Filetype specific settings
 autocmd FileType markdown,html,css,javascript setlocal tabstop=2 shiftwidth=2
-autocmd FileType c setlocal shiftwidth=8 tabstop=8 et
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 et
+autocmd FileType c setlocal shiftwidth=8 tabstop=8
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+autocmd FileType make setlocal shiftwidth=4 tabstop=4 et!
