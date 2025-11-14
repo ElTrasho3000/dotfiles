@@ -1,8 +1,19 @@
-" |----------------- VIM SETTINGS -----------------|
+" ------------------ VIM SETTINGS ------------------
 " --------------------------------------------------
 " unset vi compatibility
 set nocompatible
 
+" --------------------------------------------------
+" vim-plug - init plugins
+
+call plug#begin()
+
+Plug 'preservim/vim-markdown'
+Plug 'godlygeek/tabular'
+
+call plug#end()
+
+" --------------------------------------------------
 " remap keybinds
 inoremap jj <Esc>
 vnoremap ff <ESC>
@@ -13,6 +24,9 @@ let &t_EI = "\e[2 q"
 
 " enable syntax colors
 syntax on
+
+" enable concealing
+set conceallevel=2
 
 " vimdiff colors
 highlight DiffAdd ctermbg=green ctermfg=white
@@ -47,3 +61,9 @@ autocmd FileType markdown,html,css,javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType c setlocal shiftwidth=8 tabstop=8
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 et!
+
+" --------------------------------------------------
+" Plugins
+
+let g:vim_markdown_folding_disabled = 1
+
