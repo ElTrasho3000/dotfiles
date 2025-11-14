@@ -1,0 +1,6 @@
+$include /etc/inputrc
+
+$if mode=vi
+    set keymap vi-command
+    "jj": vi-movement-mode
+$endif
