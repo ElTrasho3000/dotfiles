@@ -8,6 +8,8 @@ set nocompatible
 
 call plug#begin()
 
+Plug 'dense-analysis/ale'
+
 Plug 'preservim/vim-markdown'
 Plug 'godlygeek/tabular'
 
@@ -67,3 +69,9 @@ autocmd FileType make setlocal shiftwidth=4 tabstop=4 et!
 
 let g:vim_markdown_folding_disabled = 1
 
+let g:ale_linters = {
+\  'sh': ['shellcheck'],
+\  'c': ['cc'],
+\}
+
+let g:ale_completion_enabled = 0
