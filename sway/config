@@ -17,6 +17,8 @@ set $right l
 set $term foot
 # Your preferred application launcher
 set $menu wmenu-run
+# Your preferred browser
+set $browser librewolf
 
 ### Output configuration
 #
@@ -29,6 +31,25 @@ output * bg /data/images/wallpapers/voidlinux.png fill
 output 'Chimei Innolux Corporation 0x140A Unknown' pos 1920 1440 
 output 'Dell Inc. DELL S2421HN 4P2W223' pos 0 1440 mode 1920x1080@74.973Hz
 output 'Dell Inc. DELL U2515H 9X2VY5CM0Z5L' pos 1920 0 mode 2560x1440@59.951Hz
+#
+# wl-mirror
+#
+mode "present" {
+    # command starts mirroring
+    bindsym m mode "default"; exec wl-present mirror
+    # these commands modify an already running mirroring window
+    bindsym o mode "default"; exec wl-present set-output
+    bindsym r mode "default"; exec wl-present set-region
+    bindsym Shift+r mode "default"; exec wl-present unset-region
+    bindsym s mode "default"; exec wl-present set-scaling
+    bindsym f mode "default"; exec wl-present toggle-freeze
+    bindsym c mode "default"; exec wl-present custom
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+p mode "present"
 
 ### Idle configuration
 #
@@ -80,6 +101,9 @@ input type:keyboard {
 
     # Start your launcher
     bindsym $mod+space exec $menu
+
+    # Start your browser
+    bindsym $mod+g exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
