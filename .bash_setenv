@@ -1,8 +1,19 @@
 # Add AppImage-directory 'Applications' to PATH
-[[ ":$PATH:" != *":/data/Applications:"* ]] && export PATH=/data/Applications:$PATH
+[[ ":$PATH:" != "*:/data/applications:*" ]] && export PATH=/data/applications:$PATH
+
+# Set video accel driver
+LIBVA_DRIVER_NAME=iHD
 
 # Enable QT Wayland backend
 export QT_QPA_PLATFORM='wayland-egl;xcb'
+
+# Set XDG_CURRENT_DESKTOP for applications
+# Don't forget to create '$XDG_CONFIG_HOME/xdg-desktop-portal/sway-portals.conf'
+# (see portals.conf (5))
+export XDG_CURRENT_DEKSTOP=sway
+
+# Set XDG_SESSION_DESKTOP for session management
+export XDG_SESSION_DESKTOP=sway
 
 # Enable libreoffice qt6 integration 
 export SAL_USE_VCLPLUGIN=gtk3
@@ -17,3 +28,10 @@ export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 
 # Colored GCC warnings and errors
 export GCC_COLORS='error=02;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Microslop envs
+# Don't forget to create '/etc/dotnet/install_location' which is a text file
+# that contains the path to dotnet executable
+export DOTNET_ROOT=/data/applications/src/dotnet
+[[ ":$PATH:" != "*:$DOTNET_ROOT:*" ]] && export PATH=$DOTNET_ROOT:$PATH
+[[ ":$PATH:" != "*:/home/user/.dotnet/tools:*" ]] && export PATH=/home/user/.dotnet/tools:$PATH

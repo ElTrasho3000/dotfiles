@@ -26,16 +26,22 @@ set completeopt=menu,menuone
 " set tags+=~/.vim/systags
 
 " Enable concealing
-set conceallevel=2
+"set conceallevel=2
 
 " Display all matching files with tab complete
 set wildmenu
 
 " vimdiff colors
+colorscheme default
 highlight DiffAdd ctermbg=green ctermfg=white
 highlight DiffDelete ctermbg=red ctermfg=white
 highlight DiffChange ctermbg=blue ctermfg=white
-highlight DiffText ctermbg=yellow ctermfg=white
+highlight DiffText ctermbg=yellow ctermfg=black
+highlight SpellCap ctermbg=white ctermfg=black
+
+" other vim colors
+hi ColorColumn ctermbg=darkgrey
+hi SpellBad ctermbg=darkgrey ctermfg=black
 
 " Enable line numbers
 set number
@@ -47,7 +53,7 @@ set cursorline
 " Break line after 80 chars
 set textwidth=80
 " Show ruler on 81st column
-set colorcolumn=81
+set colorcolumn=81,101
 
 " Enable filetype detection
 filetype on
@@ -59,7 +65,6 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set autoindent
-set expandtab
 
 " --------------------------------------------------
 " Autocmds
@@ -67,7 +72,7 @@ set expandtab
 " Filetype specific settings
 augroup FileSettings
     autocmd!
-    autocmd FileType markdown,html,css,javascript setlocal tabstop=2 shiftwidth=2
+    autocmd FileType html,css,javascript setlocal tabstop=2 shiftwidth=2
     autocmd FileType c setlocal shiftwidth=8 tabstop=8
     autocmd FileType python setlocal shiftwidth=4 tabstop=4
     autocmd FileType make setlocal shiftwidth=4 tabstop=4 noexpandtab
@@ -80,8 +85,8 @@ call plug#begin()
 
 Plug 'dense-analysis/ale'
 
-Plug 'preservim/vim-markdown'
 Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 call plug#end()
 
@@ -89,11 +94,11 @@ call plug#end()
 " Plugins
 
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 2
 
 let g:ale_linters = {
 \  'sh': ['shellcheck'],
 \  'c': ['cc'],
+\  'python': ['ruff'],
 \}
 
 let g:ale_completion_enabled = 0

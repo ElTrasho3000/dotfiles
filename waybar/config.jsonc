@@ -105,8 +105,8 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M | %Y-%m-%d}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -116,7 +116,7 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
+        "thermal-zone": 8,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         // "format-critical": "{temperatureC}°C {icon}",
         "critical-threshold": 80,

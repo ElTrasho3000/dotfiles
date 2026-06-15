@@ -45,6 +45,6 @@ osc7_cwd() {
 PROMPT_COMMAND=${PROMPT_COMMAND:+${PROMPT_COMMAND%;}; }osc7_cwd
 
 # Source aliases and environment variables
-[[ -f ~/.bash_aliases ]] && . .bash_aliases
-[[ -f ~/.bash_setenv ]] && . .bash_setenv
+[[ -f "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases"
+[[ -f "$HOME/.bash_setenv" ]] && . "$HOME/.bash_setenv"
 . "$HOME/.local/bin/env"

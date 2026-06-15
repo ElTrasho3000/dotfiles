@@ -5,6 +5,10 @@
 # available when autostarting apps
 
 exec keepassxc-proxy 
-exec sh -c "sleep 2" && keepassxc
-exec sh -c "sleep 2" && nextcloud
-exec sh -c "sleep 2" && QT_SCALE_FACTOR=1 QT_QPA_PLATFORM=xcb megasync >/dev/null
+exec sleep 2 && keepassxc
+exec sleep 2 && wlsunset -l 48.1 -L 11.6
+exec sleep 2 && QT_SCALE_FACTOR=1 QT_QPA_PLATFORM=xcb megasync >/dev/null
+
+# Startup script with i3-toolwait
+# Currently buggy
+#exec "$HOME/.config/sway/scripts/startup.sh"

@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/data/.secdotfiles/.kube'
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/usr/share/doc/wireplumber/examples/wireplumber.conf.d'
+let g:netrw_dirhist_3='/usr/share/doc/wireplumber/examples'
+let g:netrw_dirhist_2='/usr/share/doc/wireplumber'
+let g:netrw_dirhist_1='/home/user/.config/Signal'
+let g:netrw_dirhist_0='/home/user'
+let g:netrw_dirhist_9='/home/user/void-builds/void-packages/srcpkgs/megasync/.git'
+let g:netrw_dirhist_8='/home/user/void-builds/void-packages/srcpkgs/megasync'
+let g:netrw_dirhist_7='/home/user/.irssi'
+let g:netrw_dirhist_6='/data/Obsidian/Studium/Semester_4/PraktikumDeepLearning'
+let g:netrw_dirhist_5='/data/Obsidian/Studium/Semester_4/SWEN-P/SWEN-Praktikum_SoSe2026/.git'
